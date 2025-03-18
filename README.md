@@ -1,1 +1,1 @@
-# edricolab-pi.github.io
+# edicolab-pi.github.io
