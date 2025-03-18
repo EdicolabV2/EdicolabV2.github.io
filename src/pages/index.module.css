@@ -1,48 +1,51 @@
 .heroBanner {
-  padding: 4rem 0;
+  padding: 2rem 1rem;
   text-align: center;
   position: relative;
   overflow: hidden;
-  height: 60vh; /* Inicialmente, 60% da altura da tela */
+  height: 93vh;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-/* Pseudo-elemento para o fundo */
 .heroBanner::before {
   content: "";
-  background-image: url('/img/Foral.jpg');
+  background-image: url('/img/foralBanner.jpg');
   background-size: cover;
   background-position: center;
   position: absolute;
-  filter: blur(7px);
-  top: -10vw;
-  left: -10vw;
-  right: -10vw;
-  bottom: -10vw;
+  filter: brightness(0.7);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
   z-index: 0;
-  margin: -5vw;
+  background-attachment: fixed;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
     padding: 4vw 0;
-    height: 50vh; /* Em telas menores que 996px, o banner ocupa 50% da altura da tela */
+    height: 50vh;
   }
 }
 
 @media screen and (max-width: 768px) {
   .heroBanner {
     padding: 6vw 0;
-    height: 40vh; /* Em telas ainda menores (<=768px), o banner ocupa 40% da altura da tela */
+    height: 40vh;
+    background-attachment: scroll;
+
   }
 }
 
 @media screen and (max-width: 480px) {
   .heroBanner {
     padding: 8vw 0;
-    height: 30vh; /* Em telas muito pequenas (<=480px), o banner ocupa 30% da altura da tela */
+    height: 30vh;
+    background-attachment: scroll;
+
   }
 }
 
@@ -52,31 +55,80 @@
   justify-content: center;
 }
 
-.heroBanner > * {
+.heroBanner>* {
   position: relative;
   z-index: 1;
 }
 
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 90%
+  }
+}
+
+@keyframes blinkTextCursor {
+  0% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+
+  50% {
+    border-right-color: transparent;
+  }
+
+  100% {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+}
+
 .hero__title {
+  position: relative;
+  z-index: 2;
+  margin-left: 1vw;
+  margin-right: 1vw;
+  text-align: center;
   font-size: 6vw;
   font-weight: 1000;
   color: #fff;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 0.15em solid rgba(255, 255, 255, 0.75);
+  animation: typewriter 2s steps(40), blinkTextCursor 0.75s step-end 4s infinite;
+  filter: none;
+  max-width: max-content;
+
 }
 
-@media screen and (max-width: 768px) {
-  .hero__title {
-    font-size: 8vw;
+.container {
+  width: 200px;
+}
+
+.loadingScreen {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #fff;
+}
+
+.spinner {
+  border: 8px solid #f4e8e8;
+  border-top: 8px solid #be9e5d;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
   }
 }
-
-@media screen and (max-width: 480px) {
-  .hero__title {
-    font-size: 10vw;
-  }
-}
-
-
-
-
-
-

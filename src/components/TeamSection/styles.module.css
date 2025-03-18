@@ -18,8 +18,10 @@
   align-items: center;
   text-align: center;
   position: relative;
-  opacity: 0; /* Inicialmente invisível */
-  transform: translateY(1.25rem); /* Começa fora da tela */
+  opacity: 0;
+  /* Inicialmente invisível */
+  transform: translateY(1.25rem);
+  /* Começa fora da tela */
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
@@ -44,13 +46,13 @@
   max-height: 10rem;
   min-width: 8rem;
   min-height: 8rem;
-  background-color: #30b8f7;
+  background-color: #f5dcbf;
   border-radius: 50%;
   overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 0 0 0.25rem #78d4ff;
+  box-shadow: 0 0 0 0.25rem #e5be90;
 }
 
 .teamImage {
@@ -81,62 +83,128 @@
 
 .githubLink {
   margin: 0.5rem 0;
-  font-size: 1.2rem;
+  font-size: 1.2vw;
 }
 
 .githubIcon {
-  font-size: 1.5rem;
+  font-size: 3.5vw;
   color: white;
 }
 
 .name {
   font-weight: bold;
   margin-top: 0.5rem;
-  font-size: 1.2rem;
+  font-size: 1.3vw;
 }
 
 .role {
-  font-size: 1.2rem;
-  transition: all 2s ease-in-out;
+  font-size: 1vw;
   opacity: 1;
 }
 
-.roleA {
-  font-size: 1.2rem; /* Fonte menor para roleA */
-  transition: all 0.8s ease-in-out;
-  opacity: 1;
+/* Media queries for different screen sizes */
+@media (max-width: 1200px) {
+  .githubLink {
+    font-size: 1.5vw;
+  }
+
+  .githubIcon {
+    font-size: 4vw;
+  }
+
+  .name {
+    font-size: 1.8vw;
+  }
+
+  .role {
+    font-size: 1.4vw;
+  }
 }
 
-.fadeIn {
-  font-size: 1rem; /* Aumenta a fonte ao traduzir */
-  opacity: 1;
-  transition: transform 2s linear;
+@media (max-width: 992px) {
+  .githubLink {
+    font-size: 1.8vw;
+  }
+
+  .githubIcon {
+    font-size: 5vw;
+  }
+
+  .name {
+    font-size: 2vw;
+  }
+
+  .role {
+    font-size: 1.6vw;
+  }
 }
 
-.fadeOut {
-  font-size: 1.2rem; /* Retorna ao tamanho menor ao sair */
-  opacity: 0.7;
-  transform: translateY(0.3125rem);
-  transition: transform 2s linear;
+@media (max-width: 768px) {
+  .githubLink {
+    font-size: 2vw;
+  }
+
+  .githubIcon {
+    font-size: 5vw;
+  }
+
+  .name {
+    font-size: 2.5vw;
+  }
+
+  .role {
+    font-size: 2vw;
+  }
 }
 
-.role:hover {
-  transform: rotateY(360deg) rotateZ(-45deg);
-  opacity: 1;
+@media (max-width: 576px) {
+  .githubLink {
+    font-size: 2.5vw;
+  }
+
+  .githubIcon {
+    font-size: 6vw;
+  }
+
+  .name {
+    font-size: 3vw;
+  }
+
+  .role {
+    font-size: 2.4vw;
+  }
+}
+@media (max-width: 450px) {
+  .githubLink {
+    font-size: 2.5vw;
+  }
+
+  .githubIcon {
+    font-size: 8vw;
+  }
+
+  .name {
+    font-size: 3vw;
+  }
+
+  .role {
+    font-size: 2.4vw;
+  }
 }
 
 @keyframes fadeInUp {
   0% {
     opacity: 0;
-    transform: translateY(1.25rem); /* Começa um pouco abaixo */
+    transform: translateY(1.25rem);
   }
+
   100% {
     opacity: 1;
-    transform: translateY(0); /* Finaliza na posição normal */
+    transform: translateY(0);
   }
 }
 
 .teamCard.visible {
   animation: fadeInUp 1s ease-in-out forwards;
-  animation-delay: calc(0.2s * var(--index) + 0.1s); /* Adiciona atraso dependendo do índice e 100ms */
+  animation-delay: calc(0.2s * var(--index) + 0.1s);
 }

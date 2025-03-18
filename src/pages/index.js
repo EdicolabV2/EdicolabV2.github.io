@@ -1,29 +1,41 @@
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
 import TeamSection from '@site/src/components/TeamSection';
-
-import Heading from '@theme/Heading';
 import styles from './index.module.css';
-
+import React, { useState, useEffect } from 'react';
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-      <Heading as="h1" className={clsx('hero__title', styles.hero__title)}>
+      <h1 as="h1" className={clsx('hero__title', styles.hero__title)}>
         Welcome to Edicolab
-      </Heading>
-      </div>
+      </h1>
     </header>
   );
 }
 
 export default function Home() {
-  const {siteConfig} = useDocusaurusContext();
+  const { siteConfig } = useDocusaurusContext();
+  const [isLoading, setIsLoading] = useState(true);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setIsLoading(false);}, 1000);
+
+    return () => clearTimeout(timer);
+  }, []);
+
+  if (isLoading) {
+    return (
+      <div className={styles.loadingScreen}>
+        <div className={styles.spinner}></div>
+      </div>
+    );
+  }
+
   return (
     <Layout
       title={`${siteConfig.title}`}
@@ -32,7 +44,6 @@ export default function Home() {
       <main>
         <HomepageFeatures />
         <TeamSection />
-
       </main>
     </Layout>
   );

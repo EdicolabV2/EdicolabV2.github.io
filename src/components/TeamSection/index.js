@@ -10,62 +10,45 @@ import hugo from '../../../static/img/TeamPhotos/hugo.png';
 import pedro from '../../../static/img/TeamPhotos/pedro.png';
 
 const teamMembers = [
-  { name: "André Dora", roleA: "مَقرُبة", role: "UI Designer", github: "https://github.com/andredora", image: andre },
-  { name: "António Alberto", roleA: "سفينة", role: "Product Owner", github: "https://github.com/antoniocsh", image: antonio },
-  { name: "Gonçalo Sousa", roleA: "هاتِفيّ", role: "PWP Master", github: "https://github.com/goncalofcs18", image: goncalo },
-  { name: "Hugo Sousa", roleA: "أرجو", role: "Architect", github: "https://github.com/hugaos", image: hugo },
-  { name: "Pedro Oliveira", roleA: "اِرتِكاب", role: "Devops", github: "https://github.com/TKahk", image: pedro },
+  { name: "André Dora", role: "UI Designer", github: "https://github.com/andredora", image: andre },
+  { name: "António Alberto", role: "Product Owner", github: "https://github.com/antoniocsh", image: antonio },
+  { name: "Gonçalo Sousa", role: "Scrum Master", github: "https://github.com/goncalofcs18", image: goncalo },
+  { name: "Hugo Sousa", role: "Architect", github: "https://github.com/hugaos", image: hugo },
+  { name: "Pedro Oliveira", role: "DevOps Master", github: "https://github.com/TKahk", image: pedro },
 ];
 
 const TeamSection = () => {
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [isVisible, setIsVisible] = useState(Array(teamMembers.length).fill(false));
-
-  const hoverTimeout = useRef(null);
-  const leaveTimeout = useRef(null);
-
-  const observer = useRef(
-    new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          const index = parseInt(entry.target.getAttribute('data-index'), 10);
-          setIsVisible((prev) => {
-            const updated = [...prev];
-            updated[index] = true;
-            return updated;
-          });
-        }
-      });
-    }, { threshold: 0.1 }) // Ajuste o threshold conforme necessário
-  );
-
-  const handleMouseEnter = (index) => {
-    clearTimeout(leaveTimeout.current); // Cancela o fade-out se o hover voltar rápido
-    hoverTimeout.current = setTimeout(() => {
-      setHoveredIndex(index);
-    }, 300); // Pequeno atraso ao entrar
-  };
-
-  const handleMouseLeave = () => {
-    clearTimeout(hoverTimeout.current); // Cancela o fade-in se o rato sair rápido
-    leaveTimeout.current = setTimeout(() => {
-      setHoveredIndex(null);
-    }, 300); // Atraso para suavizar o fade-out
-  };
+  const observerRef = useRef(null); // Store observer reference
 
   useEffect(() => {
-    const elements = document.querySelectorAll(`.${styles.teamMember}`);
-    elements.forEach((el, index) => {
-      el.setAttribute('data-index', index);
-      observer.current.observe(el);
-    });
+    if (typeof window !== 'undefined') { // Ensure this runs only on the client
+      observerRef.current = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.getAttribute('data-index'), 10);
+            setIsVisible((prev) => {
+              const updated = [...prev];
+              updated[index] = true;
+              return updated;
+            });
+          }
+        });
+      }, { threshold: 0.1 });
 
-    return () => {
       const elements = document.querySelectorAll(`.${styles.teamMember}`);
-      elements.forEach((el) => {
-        observer.current.unobserve(el);
+      elements.forEach((el, index) => {
+        el.setAttribute('data-index', index);
+        observerRef.current.observe(el);
       });
-    };
+
+      return () => {
+        elements.forEach((el) => {
+          observerRef.current.unobserve(el);
+        });
+      };
+    }
   }, []);
 
   return (
@@ -79,7 +62,6 @@ const TeamSection = () => {
               [styles.visible]: isVisible[index],
             })}
             style={{ '--index': index }}
-
           >
             <div className={styles.imageContainer}>
               <img src={member.image} alt={member.name} className={styles.teamImage} />
@@ -91,15 +73,7 @@ const TeamSection = () => {
             </div>
             <div className="tag-name-container">
               <p className={styles.name}>{member.name}</p>
-              <p onMouseEnter={() => handleMouseEnter(index)}
-                onMouseLeave={handleMouseLeave}
-                className={clsx(styles.role, {
-                  [styles.fadeIn]: hoveredIndex === index,
-                  [styles.fadeOut]: hoveredIndex !== index && hoveredIndex !== null
-                })}
-              >
-                {hoveredIndex === index ? member.role : member.roleA}
-              </p>
+              <p className={clsx(styles.role)}>{member.role}</p>
             </div>
           </div>
         ))}
