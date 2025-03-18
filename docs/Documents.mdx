@@ -1,0 +1,40 @@
+import Personas from '../static/pdf/Personas.pdf';
+import pimage from '../static/img/Personas.png';
+import DomainModel from '../static/pdf/Domain_Model.pdf';
+import dimage from '../static/img/Domain_Model.png';
+import Flowchart from '../static/pdf/Flowchart.pdf';
+import fimage from '../static/img/Flowchart.png';
+import Requirements from '../static/pdf/Requirements.pdf';
+import rimage from '../static/img/Requirements.png';
+import UseCases from '../static/pdf/UseCases.pdf';
+import uimage from '../static/img/UseCases.png';
+import './docs.css';
+
+export default function Documents() {
+  const DocumentCard = ({ title, href, imgSrc }) => (
+    <div className="document-section">
+      <h2 className="title">{title}</h2>
+      <a href={href} download>
+        <div className="card">
+          <img src={imgSrc} alt="Document Preview" />
+          <div className="overlay">Download as PDF</div>
+        </div>
+      </a>
+    </div>
+  );
+
+  return (
+    <div className="container">
+      <div className="row">
+        <DocumentCard title="Personas" href={Personas} imgSrc={pimage} />
+        <DocumentCard title="Domain Model" href={DomainModel} imgSrc={dimage} />
+        <DocumentCard title="FlowChart" href={Flowchart} imgSrc={fimage} />
+      </div>
+      <div className="row">
+        <DocumentCard title="Requirements" href={Requirements} imgSrc={rimage} />
+        <DocumentCard title="Use Cases" href={UseCases} imgSrc={uimage} />
+      </div>
+
+    </div>
+  );
+}

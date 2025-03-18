@@ -1,0 +1,142 @@
+.teamSection {
+  text-align: center;
+  padding: 2rem 5vw;
+}
+
+.teamContainer {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  max-width: 87%;
+  margin: 0 auto;
+}
+
+.teamMember {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  opacity: 0; /* Inicialmente invisível */
+  transform: translateY(1.25rem); /* Começa fora da tela */
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.teamCard {
+  background-color: transparent;
+  padding: 0.9375rem;
+  border-radius: 1rem;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.teamCard:hover {
+  background-color: #a5a5a567;
+  box-shadow: 0 0.25rem 0.9375rem rgba(0, 0, 0, 0.2);
+}
+
+.imageContainer {
+  position: relative;
+  width: 12vw;
+  height: 12vw;
+  max-width: 10rem;
+  max-height: 10rem;
+  min-width: 8rem;
+  min-height: 8rem;
+  background-color: #30b8f7;
+  border-radius: 50%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 0 0.25rem #78d4ff;
+}
+
+.teamImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  color: rgb(105, 105, 105);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.teamCard:hover .overlay {
+  opacity: 1;
+}
+
+.githubLink {
+  margin: 0.5rem 0;
+  font-size: 1.2rem;
+}
+
+.githubIcon {
+  font-size: 1.5rem;
+  color: white;
+}
+
+.name {
+  font-weight: bold;
+  margin-top: 0.5rem;
+  font-size: 1.2rem;
+}
+
+.role {
+  font-size: 1.2rem;
+  transition: all 2s ease-in-out;
+  opacity: 1;
+}
+
+.roleA {
+  font-size: 1.2rem; /* Fonte menor para roleA */
+  transition: all 0.8s ease-in-out;
+  opacity: 1;
+}
+
+.fadeIn {
+  font-size: 1rem; /* Aumenta a fonte ao traduzir */
+  opacity: 1;
+  transition: transform 2s linear;
+}
+
+.fadeOut {
+  font-size: 1.2rem; /* Retorna ao tamanho menor ao sair */
+  opacity: 0.7;
+  transform: translateY(0.3125rem);
+  transition: transform 2s linear;
+}
+
+.role:hover {
+  transform: rotateY(360deg) rotateZ(-45deg);
+  opacity: 1;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1.25rem); /* Começa um pouco abaixo */
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0); /* Finaliza na posição normal */
+  }
+}
+
+.teamCard.visible {
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: calc(0.2s * var(--index) + 0.1s); /* Adiciona atraso dependendo do índice e 100ms */
+}

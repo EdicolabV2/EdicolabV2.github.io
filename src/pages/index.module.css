@@ -1,0 +1,82 @@
+.heroBanner {
+  padding: 4rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  height: 60vh; /* Inicialmente, 60% da altura da tela */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Pseudo-elemento para o fundo */
+.heroBanner::before {
+  content: "";
+  background-image: url('/img/Foral.jpg');
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  filter: blur(7px);
+  top: -10vw;
+  left: -10vw;
+  right: -10vw;
+  bottom: -10vw;
+  z-index: 0;
+  margin: -5vw;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 4vw 0;
+    height: 50vh; /* Em telas menores que 996px, o banner ocupa 50% da altura da tela */
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heroBanner {
+    padding: 6vw 0;
+    height: 40vh; /* Em telas ainda menores (<=768px), o banner ocupa 40% da altura da tela */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .heroBanner {
+    padding: 8vw 0;
+    height: 30vh; /* Em telas muito pequenas (<=480px), o banner ocupa 30% da altura da tela */
+  }
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heroBanner > * {
+  position: relative;
+  z-index: 1;
+}
+
+.hero__title {
+  font-size: 6vw;
+  font-weight: 1000;
+  color: #fff;
+}
+
+@media screen and (max-width: 768px) {
+  .hero__title {
+    font-size: 8vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero__title {
+    font-size: 10vw;
+  }
+}
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+import M1p from '../../static/img/M1p.png';
+import m1Presentation from '../../static/pdf/M1-Presentation.pdf';
+import PCalendar1 from '../../static/img/PCalendar1.png';
+import projectCalendar from '../../static/pdf/Calendar.pdf';
+import M2Calendarpng from '../../static/img/M2Calendar.png';
+import M2Calendar from '../../static/pdf/M2-Calendar.pdf';
+import M2p from '../../static/img/M2p.png';
+import m2Presentation from '../../static/pdf/M2-Presentation.pdf';
+import styles from './milestones.module.css';
+
+export default function Milestones() {
+  const MilestoneCard = ({ title, href, imgSrc, altText }) => (
+    <a href={href} download>
+      <div className={styles.card}>
+        <img src={imgSrc} alt={altText} />
+        <div className={styles.overlay}>Download {title}</div>
+      </div>
+    </a>
+  );
+
+  return (
+    <>
+      <h1>Milestones</h1>
+      <h2>Milestone 1 - 25/2</h2>
+      <div className={styles.milestonesContainer}>
+        <div className={styles.milestone}>
+          <MilestoneCard
+            title="M1 Presentation"
+            href={m1Presentation}
+            imgSrc={M1p}
+            altText="M1 Presentation"
+          />
+          <MilestoneCard
+            title="Project Calendar"
+            href={projectCalendar}
+            imgSrc={PCalendar1}
+            altText="Project Calendar"
+          />
+        </div>
+      </div>
+
+      <br />
+
+      <h2>Milestone 2 - 11/3</h2>
+      <div className={styles.milestonesContainer}>
+        <div className={styles.milestone}>
+          <MilestoneCard
+            title="M2 Presentation"
+            href={m2Presentation}
+            imgSrc={M2p}
+            altText="M2 Presentation"
+          />
+          <MilestoneCard
+            title="M2 Calendar"
+            href={M2Calendar}
+            imgSrc={M2Calendarpng}
+            altText="M2 Calendar"
+          />
+        </div>
+      </div>
+    </>
+  );
+}

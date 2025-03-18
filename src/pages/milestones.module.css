@@ -1,0 +1,72 @@
+.milestonesContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.milestone {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: nowrap;
+  width: auto;
+  max-width: 100%;
+}
+
+.card {
+  border: 0.09rem solid #ddd;
+  padding: 0.5rem;
+  margin-bottom: 2rem;
+  border-radius: 0.8rem;
+  text-align: center;
+  width: 17rem;
+  position: relative;
+  height: 12rem;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+}
+
+.card img {
+  max-width: 100%;
+  height: 100%;
+  display: block;
+  margin: 0 auto;
+  transition: transform 0.4s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.05);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 8px;
+}
+
+.card:hover .overlay {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .milestone {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media (max-width: 1024px) {
+  .milestone {
+    flex-wrap: wrap;
+  }
+}

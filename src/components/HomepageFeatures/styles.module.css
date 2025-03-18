@@ -1,0 +1,27 @@
+.containerDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 7rem;
+  margin-right: 7rem;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+.Edicolab {
+  max-width: 40%;
+  margin-right: 2rem;
+}
+
+.description {
+  flex: 1;
+  color: grey;
+  text-align: justify;
+  font-size: 1.1rem;
+}
+
+.image {
+  max-width: 50%;
+  height: auto;
+  border-radius: 5%;
+}
