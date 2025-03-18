@@ -54,9 +54,7 @@ const config = {
           onInlineAuthors: 'warn',
           onUntruncatedBlogPosts: 'warn',
         },
-        theme: {
-          customCss: './src/css/custom.css',
-        },
+
       }),
     ],
   ],
@@ -89,7 +87,7 @@ const config = {
             label: 'Documentation',
           },
           {
-            href: 'https://github.com/TKahk/PI',
+            href: 'https://github.com/EdicolabV2/EdicolabV2.github.io',
             label: 'GitHub',
             position: 'right',
           },
@@ -104,7 +102,7 @@ const config = {
             items: [
               {
                 label: 'GitHub',
-                href: 'https://github.com/TKahk/PI',
+                href: 'https://github.com/EdicolabV2/EdicolabV2.github.io',
               },
             ],
           },
@@ -112,7 +110,6 @@ const config = {
         copyright: `Copyright © ${new Date().getFullYear()}`,
       },
       prism: {
-        theme: prismThemes.github,
         darkTheme: prismThemes.dracula,
       },
     }),
