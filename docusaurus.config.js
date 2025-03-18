@@ -14,10 +14,10 @@ const config = {
   favicon: 'img/logo-.png',
 
   // Set the production url of your site here
-  url: 'https://tkahk.github.io', 
+  url: 'https://EdicolabV2.github.io', 
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/edicolab-pi.github.io/',
+  baseUrl: '/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
