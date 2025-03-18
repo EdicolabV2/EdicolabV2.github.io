@@ -21,14 +21,12 @@ jobs:
 
       - name: Install dependencies
         run: npm install
-        working-directory: ./edicolab-pi.github.io # Set this to your Docusaurus directory
 
       - name: Build site
         run: npm run build
-        working-directory: ./edicolab-pi.github.io # Set this to your Docusaurus directory
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./edicolab-pi.github.io/build # Adjust the path if needed
+          publish_dir: ./build # Adjust the path if needed
