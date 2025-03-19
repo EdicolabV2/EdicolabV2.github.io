@@ -1,0 +1,176 @@
+.features {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  opacity: 0;
+  transform: translateY(1.25rem);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.features.visible {
+  animation: fadeInUp 1s ease-in-out forwards;
+  animation-delay: calc(0.2s * var(--index) + 0.1s);
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(1.25rem);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+.containerFlex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 3vw;
+  margin-right: 3vw;
+  margin-bottom: 3vw;
+  margin-top: 2vw;
+  gap: 7vw;
+}
+
+.Edicolab {
+  max-width: 40vw;
+  margin-right: 2vw;
+}
+
+.description {
+  flex: 1;
+  color: grey;
+  text-align: justify;
+  font-size: 1.2vw;
+  /* Usando unidades de viewport width para ajuste fluido */
+}
+
+.descriptionTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 2.2vw;
+  /* Usando unidades de viewport width para ajuste fluido */
+}
+
+.descriptionSubTitle {
+  flex: 1;
+  text-align: center;
+  font-size: 1.5vw;
+  /* Usando unidades de viewport width para ajuste fluido */
+}
+
+.icone {
+  height: 8vw;
+}
+
+.zoom {
+  transition: transform 0.3s ease;
+}
+
+.zoom:hover {
+  transform: scale(1.1);
+}
+
+@media screen and (max-width: 1200px) {
+  .containerFlex {
+    margin-left: 5vw;
+    margin-right: 5vw;
+  }
+
+  .description {
+    font-size: 1.5vw;
+  }
+
+  .descriptionSubTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 2.3vw;
+  }
+
+  .descriptionTitle {
+    font-size: 2.5vw;
+  }
+
+  .icone {
+    height: 8vw;
+  }
+}
+
+@media screen and (max-width: 996px) {
+  .containerFlex {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  .description {
+    font-size: 1.7vw;
+  }
+
+  .descriptionTitle {
+    font-size: 2.5vw;
+  }
+
+  .descriptionSubTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 2.3vw;
+  }
+
+  .icone {
+    height: 9vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .containerFlex {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .descriptionTitle {
+    flex: 1;
+    text-align: auto;
+    font-size: 3.5vw;
+  }
+
+  .image {
+    max-width: 80vw;
+  }
+
+  .descriptionSubTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 2.8vw;
+  }
+
+  .icone {
+    height: 13vw;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .containerFlex {
+    margin-left: 4vw;
+    margin-right: 4vw;
+  }
+
+  .descriptionTitle {
+    font-size: 5vw;
+  }
+
+  .descriptionSubTitle {
+    flex: 1;
+    text-align: center;
+    font-size: 5vw;
+  }
+
+  .icone {
+    height: 13vw;
+  }
+}

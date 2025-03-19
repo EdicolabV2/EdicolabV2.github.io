@@ -2,6 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import clsx from 'clsx';
 import Heading from '@theme/Heading';
 import styles from './styles.module.css';
+import Architecture from '../../../static/img/3d-architecture.png';
+import document from '../../../static/img/document.png';
+import achievement from '../../../static/img/achievement.png';
+
+
 
 export default function HomepageFeatures() {
   const [isVisible, setIsVisible] = useState(false);
@@ -31,13 +36,21 @@ export default function HomepageFeatures() {
 
   return (
     <div ref={sectionRef} className={clsx(styles.features, { [styles.visible]: isVisible })}>
-      <div className={styles.containerDescription}>
-        <div className={styles.Edicolab}>
-          <h2 className={styles.descriptionTitle}>What's Edicolab?</h2>
-          <h4 className={styles.description}>
-          Edicolab is a platform for collaborative editing and annotating historical documents, designed for researchers and historians. It enables transcription, tagging, and analysis of texts using custom TEI-based tags, enhancing document accessibility and improving tag validation for greater accuracy.          </h4>
+      <h2 className={styles.descriptionTitle}>What do we have to show you?</h2>
+
+      <div className={styles.containerFlex}>
+        <div className={clsx(styles.Documents , styles.zoom)}>
+          <h4 className={styles.descriptionSubTitle}>Documents</h4>
+          <a href="/PI/docs/Documents">
+            <img className={styles.icone} src={document} alt="Documents" />
+          </a>
         </div>
-        <img className={styles.image} src='https://deti-iforal.ua.pt/_app/immutable/assets/auth-image-2-5cc28bdf.png' alt='Edicolab'></img>
+        <div className={clsx(styles.Deliverables , styles.zoom)}>
+          <h4 className={styles.descriptionSubTitle}>Deliverables</h4>
+          <a href="/PI/milestones">
+            <img className={styles.icone} src={achievement} alt="Milestones" />
+          </a>
+        </div>
       </div>
     </div>
   );

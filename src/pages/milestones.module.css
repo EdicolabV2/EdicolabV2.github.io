@@ -14,7 +14,7 @@
 }
 
 .card {
-  border: 0.09rem solid #ddd;
+  border: 0.09rem solid #c1c1c1;
   padding: 0.5rem;
   margin-bottom: 2rem;
   border-radius: 0.8rem;
@@ -44,7 +44,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   color: white;
   display: flex;
   align-items: center;
@@ -68,5 +68,49 @@
 @media (max-width: 1024px) {
   .milestone {
     flex-wrap: wrap;
+  }
+}
+
+
+.sidebar {
+  position: absolute;
+  right: 4vw;
+  top: 6rem;
+  padding: 1rem;
+  border-radius: 10px;
+}
+
+.sidebar::before {
+  content: "";
+  position: absolute;
+  left: -15px;
+  top: 0;
+  height: 100%;
+  width: 1px;
+  background-color: #b0b0b0;
+}
+
+.sidebar h3 {
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  margin-bottom: 0.5rem;
+}
+
+.sidebar a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+@media (max-width: 1100px) {
+  .sidebar {
+    display: none;
   }
 }

@@ -95,7 +95,17 @@
   font-weight: bold;
   margin-top: 0.5rem;
   font-size: 1.3vw;
+  white-space: nowrap;
+  overflow: visible;
+  text-align: center;
 }
+
+.tag-name-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
 
 .role {
   font-size: 1vw;
@@ -205,6 +215,6 @@
 }
 
 .teamCard.visible {
-  animation: fadeInUp 1s ease-in-out forwards;
+  animation: fadeInUp 0.8s ease-in-out forwards;
   animation-delay: calc(0.2s * var(--index) + 0.1s);
 }

@@ -19,45 +19,55 @@ export default function Milestones() {
   );
 
   return (
-    <>
-      <h1>Milestones</h1>
-      <h2>Milestone 1 - 25/2</h2>
-      <div className={styles.milestonesContainer}>
-        <div className={styles.milestone}>
-          <MilestoneCard
-            title="M1 Presentation"
-            href={m1Presentation}
-            imgSrc={M1p}
-            altText="M1 Presentation"
-          />
-          <MilestoneCard
-            title="Project Calendar"
-            href={projectCalendar}
-            imgSrc={PCalendar1}
-            altText="Project Calendar"
-          />
+    <div className={styles.milestonesPage}>
+      <aside className={styles.sidebar}>
+        <ul>
+          <li><a href="#milestone1">Milestone 1 - 25/2</a></li>
+          <li><a href="#milestone2">Milestone 2 - 11/3</a></li>
+        </ul>
+      </aside>
+
+      <div className={styles.content}>
+        <h1>Milestones</h1>
+
+        <h2 id="milestone1">Milestone 1 - 25/2</h2>
+        <div className={styles.milestonesContainer}>
+          <div className={styles.milestone}>
+            <MilestoneCard
+              title="M1 Presentation"
+              href={m1Presentation}
+              imgSrc={M1p}
+              altText="M1 Presentation"
+            />
+            <MilestoneCard
+              title="Project Calendar"
+              href={projectCalendar}
+              imgSrc={PCalendar1}
+              altText="Project Calendar"
+            />
+          </div>
+        </div>
+
+        <br />
+
+        <h2 id="milestone2">Milestone 2 - 11/3</h2>
+        <div className={styles.milestonesContainer}>
+          <div className={styles.milestone}>
+            <MilestoneCard
+              title="M2 Presentation"
+              href={m2Presentation}
+              imgSrc={M2p}
+              altText="M2 Presentation"
+            />
+            <MilestoneCard
+              title="M2 Calendar"
+              href={M2Calendar}
+              imgSrc={M2Calendarpng}
+              altText="M2 Calendar"
+            />
+          </div>
         </div>
       </div>
-
-      <br />
-
-      <h2>Milestone 2 - 11/3</h2>
-      <div className={styles.milestonesContainer}>
-        <div className={styles.milestone}>
-          <MilestoneCard
-            title="M2 Presentation"
-            href={m2Presentation}
-            imgSrc={M2p}
-            altText="M2 Presentation"
-          />
-          <MilestoneCard
-            title="M2 Calendar"
-            href={M2Calendar}
-            imgSrc={M2Calendarpng}
-            altText="M2 Calendar"
-          />
-        </div>
-      </div>
-    </>
+    </div>
   );
 }

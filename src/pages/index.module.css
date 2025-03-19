@@ -7,6 +7,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  background: transparent;
 }
 
 .heroBanner::before {
@@ -21,21 +22,33 @@
   right: 0;
   bottom: 0;
   z-index: 0;
-  background-attachment: fixed;
+  min-height: 100vh;
+  inset: 0;
+
+}
+
+@media (min-width: 997px) {
+  .heroBanner::before {
+    background-attachment: fixed;
+
+  }
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 4vw 0;
     height: 50vh;
+    align-items: center;
+    justify-content: center;
+  }
+  .heroBanner::before {
+    background-size: cover;
+    background-position: center;
   }
 }
 
 @media screen and (max-width: 768px) {
   .heroBanner {
-    padding: 6vw 0;
     height: 40vh;
-    background-attachment: scroll;
 
   }
 }
@@ -44,7 +57,12 @@
   .heroBanner {
     padding: 8vw 0;
     height: 30vh;
-    background-attachment: scroll;
+  }
+
+  .heroBanner::before {
+    position: none;
+    background-size:contain;
+    zoom: 25%;
 
   }
 }
@@ -66,7 +84,7 @@
   }
 
   to {
-    width: 90%
+    width: 100%
   }
 }
 
@@ -96,7 +114,7 @@
   overflow: hidden;
   white-space: nowrap;
   border-right: 0.15em solid rgba(255, 255, 255, 0.75);
-  animation: typewriter 2s steps(40), blinkTextCursor 0.75s step-end 4s infinite;
+  animation: typewriter 2s steps(40), blinkTextCursor 0.75s step-end 1s infinite;
   filter: none;
   max-width: max-content;
 
@@ -111,7 +129,6 @@
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-color: #fff;
 }
 
 .spinner {

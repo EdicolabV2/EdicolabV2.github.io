@@ -2,6 +2,7 @@ import clsx from 'clsx';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
 import HomepageFeatures from '@site/src/components/HomepageFeatures';
+import DescriptionSection from '@site/src/components/DescriptionSection';
 import TeamSection from '@site/src/components/TeamSection';
 import styles from './index.module.css';
 import React, { useState, useEffect } from 'react';
@@ -43,6 +44,7 @@ export default function Home() {
       <HomepageHeader />
       <main>
         <HomepageFeatures />
+        <DescriptionSection/>
         <TeamSection />
       </main>
     </Layout>
