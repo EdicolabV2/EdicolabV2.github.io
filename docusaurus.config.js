@@ -4,7 +4,7 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
@@ -14,7 +14,7 @@ const config = {
   favicon: 'img/logo-.png',
 
   // Set the production url of your site here
-  url: 'https://EdicolabV2.github.io', 
+  url: 'https://EdicolabV2.github.io',
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
   baseUrl: '/',
@@ -42,7 +42,7 @@ const config = {
       ({
         docs: {
           sidebarPath: './sidebars.js',
-          
+
         },
         blog: {
           showReadingTime: true,
@@ -77,7 +77,7 @@ const config = {
             marginLeft: 'auto',
             marginRight: 'auto',
             marginTop: '-12px',
-          }, 
+          },
         },
         items: [
           {
@@ -91,26 +91,25 @@ const config = {
             label: 'GitHub',
             position: 'right',
           },
-          {to: '/milestones', label: 'Milestones', position: 'left'},
+          { to: '/milestones', label: 'Milestones', position: 'left' },
         ],
       },
       footer: {
         style: 'dark',
-        links: [
-          {
-            title: 'Info',
-            items: [
-              {
-                label: 'GitHub',
-                href: 'https://github.com/EdicolabV2/EdicolabV2.github.io',
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()}`,
-      },
-      prism: {
-        darkTheme: prismThemes.dracula,
+        copyright: `
+        <div style="display: flex; width:100%">
+          <div style="text-align: left; width:100%">
+            <strong>EDICOLAB</strong><br>
+            Project in Informatics<br>
+            Degree in Informatics Engineering<br>
+          </div>
+          <div style="text-align: right; width:100%">
+            <br>
+            Department of Electronics, Telecommunications and Informatics<br>
+            University of Aveiro<br><br>
+          </div>
+        </div>
+        `,
       },
     }),
 };
