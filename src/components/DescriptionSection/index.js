@@ -41,13 +41,13 @@ export default function HomepageFeatures() {
       <div className={styles.containerFlex}>
         <div className={clsx(styles.Documents , styles.zoom)}>
           <h4 className={styles.descriptionSubTitle}>Documents</h4>
-          <a href="/PI/docs/Documents">
+          <a href="/docs/Documents">
             <img className={styles.icone} src={document} alt="Documents" />
           </a>
         </div>
         <div className={clsx(styles.Deliverables , styles.zoom)}>
           <h4 className={styles.descriptionSubTitle}>Deliverables</h4>
-          <a href="/PI/milestones">
+          <a href="/milestones">
             <img className={styles.icone} src={achievement} alt="Milestones" />
           </a>
         </div>
