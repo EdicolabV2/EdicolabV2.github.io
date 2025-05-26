@@ -54,10 +54,12 @@ export default function HomepageFeatures() {
 
       <div className={styles.videoContainer}>
         <h4 className={styles.descriptionSubTitle}>Video</h4>
-        <video className={styles.video} controls>
-          <source src="https://github.com/EdicolabV2/EdicolabV2.github.io/blob/main/static/videos/Video.mp4" type="video/mp4" />
-          Your browser does not support the video tag.
-        </video>
+        <iframe
+          className={styles.video}
+          src="https://www.youtube.com/embed/xMgcqNJxqqo"
+          title="YouTube video player"
+          allowFullScreen
+        ></iframe>
       </div>
       
     </div>
