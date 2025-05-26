@@ -8,6 +8,8 @@ import Requirements from '../static/pdf/Requirements.pdf';
 import rimage from '../static/img/Requirements.png';
 import UseCases from '../static/pdf/UseCases.pdf';
 import uimage from '../static/img/UseCases.png';
+import Poster from '../static/pdf/poster.pdf';
+import PosterImage from '../static/img/poster.png';
 import './docs.css';
 
 export default function Documents() {
@@ -33,6 +35,7 @@ export default function Documents() {
       <div className="row">
         <DocumentCard title="Requirements" href={Requirements} imgSrc={rimage} />
         <DocumentCard title="Use Cases" href={UseCases} imgSrc={uimage} />
+        <DocumentCard title="Poster"  href={Poster} imgSrc={PosterImage} />
       </div>
 
     </div>

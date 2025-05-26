@@ -31,7 +31,7 @@
     --ifm-color-primary-darker: rgb(255, 255, 255);
     --ifm-color-primary-darkest: rgb(255, 255, 255);
     --ifm-color-primary-light: rgb(255, 255, 255);
-    --ifm-color-primary-lighter: rgb(255, 255, 255);
+    --ifm-color-primary-lighter: rgb(255, 255, 255);  
     --ifm-color-primary-lightest: rgb(255, 255, 255);
     --ifm-color-primary-contrast-background: rgb(235, 242, 252);
     --ifm-color-primary-contrast-foreground: rgb(16, 36, 69);
@@ -325,7 +325,7 @@
   --ifm-pagination-padding-horizontal: calc(var(--ifm-spacing-horizontal) * 1);
   --ifm-pagination-padding-vertical: calc(var(--ifm-spacing-vertical) * 0.25);
   --ifm-pagination-nav-border-radius: var(--ifm-global-radius);
-  --ifm-pagination-nav-color-hover: var(--ifm-color-primary);
+  --ifm-pagination-nav-color-hover: var(--s);
   --ifm-pills-color-active: var(--ifm-color-primary);
   --ifm-pills-color-background-active: var(--ifm-hover-overlay);
   --ifm-pills-spacing: 0.125rem;

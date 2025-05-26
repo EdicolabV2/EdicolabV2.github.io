@@ -5,8 +5,7 @@ import styles from './styles.module.css';
 import Architecture from '../../../static/img/3d-architecture.png';
 import document from '../../../static/img/document.png';
 import achievement from '../../../static/img/achievement.png';
-
-
+import video from '../../../static/videos/Video.mp4';
 
 export default function HomepageFeatures() {
   const [isVisible, setIsVisible] = useState(false);
@@ -52,6 +51,15 @@ export default function HomepageFeatures() {
           </a>
         </div>
       </div>
+
+      <div className={styles.videoContainer}>
+        <h4 className={styles.descriptionSubTitle}>Playable Video</h4>
+        <video className={styles.video} controls>
+          <source src={video} type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
+      </div>
+      
     </div>
   );
 }

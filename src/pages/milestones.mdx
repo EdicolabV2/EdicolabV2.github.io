@@ -12,6 +12,10 @@ import m3Presentation from '../../static/pdf/M3-Presentation.pdf';
 import M3p from '../../static/img/M3p.png';
 import M3Calendar from '../../static/pdf/M3-Calendar.pdf';
 import M3Calendarpng from '../../static/img/M3Calendar.png';
+import cp2Presentation from '../../static/pdf/checkpoint2.pdf';
+import cp2p from '../../static/img/cp2p.png';
+import cp3Presentation from '../../static/pdf/checkpoint3.pdf';
+import cp3p from '../../static/img/cp3p.png';
 import styles from './milestones.module.css';
 
 export default function Milestones() {
@@ -107,6 +111,31 @@ export default function Milestones() {
           />
         </div>
       </div>
+
+      <h3 id="checkpoint2">Checkpoint 2 - 05/5</h3>
+      <div className={styles.milestonesContainer}>
+        <div className={styles.milestone}>
+          <MilestoneCard
+            title="Checkpoint 2 Presentation"
+            href={cp2Presentation}
+            imgSrc={cp2p}
+            altText="Checkpoint 2 Presentation"
+          />
+        </div>
+      </div>
+
+      <h3 id="checkpoint2">Checkpoint 3 - 12/5</h3>
+      <div className={styles.milestonesContainer}>
+        <div className={styles.milestone}>
+          <MilestoneCard
+            title="Checkpoint 3 Presentation"
+            href={cp3Presentation}
+            imgSrc={cp3p}
+            altText="Checkpoint 3 Presentation"
+          />
+        </div>
+      </div>
+
     </div>
   );
 }
