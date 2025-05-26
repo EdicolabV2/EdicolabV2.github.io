@@ -53,9 +53,9 @@ export default function HomepageFeatures() {
       </div>
 
       <div className={styles.videoContainer}>
-        <h4 className={styles.descriptionSubTitle}>Playable Video</h4>
+        <h4 className={styles.descriptionSubTitle}>Video</h4>
         <video className={styles.video} controls>
-          <source src={video} type="video/mp4" />
+          <source src="https://github.com/EdicolabV2/EdicolabV2.github.io/blob/main/static/videos/Video.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
       </div>
