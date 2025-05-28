@@ -35,25 +35,8 @@ export default function HomepageFeatures() {
 
   return (
     <div ref={sectionRef} className={clsx(styles.features, { [styles.visible]: isVisible })}>
-      <h2 className={styles.descriptionTitle}>What do we have to show you?</h2>
-
-      <div className={styles.containerFlex}>
-        <div className={clsx(styles.Documents , styles.zoom)}>
-          <h4 className={styles.descriptionSubTitle}>Documents</h4>
-          <a href="/docs/Documents">
-            <img className={styles.icone} src={document} alt="Documents" />
-          </a>
-        </div>
-        <div className={clsx(styles.Deliverables , styles.zoom)}>
-          <h4 className={styles.descriptionSubTitle}>Deliverables</h4>
-          <a href="/milestones">
-            <img className={styles.icone} src={achievement} alt="Milestones" />
-          </a>
-        </div>
-      </div>
 
       <div className={styles.videoContainer}>
-        <h4 className={styles.descriptionSubTitle}>Video</h4>
         <iframe
           className={styles.video}
           src="https://www.youtube.com/embed/xMgcqNJxqqo"
@@ -61,7 +44,25 @@ export default function HomepageFeatures() {
           allowFullScreen
         ></iframe>
       </div>
-      
+
+
+      <h2 className={styles.descriptionTitle}>What do we have to show you?</h2>
+
+      <div className={styles.containerFlex}>
+        <div className={clsx(styles.Documents, styles.zoom)}>
+          <h4 className={styles.descriptionSubTitle}>Documents</h4>
+          <a href="/docs/Documents">
+            <img className={styles.icone} src={document} alt="Documents" />
+          </a>
+        </div>
+        <div className={clsx(styles.Deliverables, styles.zoom)}>
+          <h4 className={styles.descriptionSubTitle}>Deliverables</h4>
+          <a href="/milestones">
+            <img className={styles.icone} src={achievement} alt="Milestones" />
+          </a>
+        </div>
+      </div>
+
     </div>
   );
 }

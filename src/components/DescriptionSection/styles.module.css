@@ -177,7 +177,7 @@
 
 .videoContainer {
   width: 100%;
-  max-width: 800px;
+  max-width: 75vw;
   margin: 2rem auto;
   text-align: center;
 }
@@ -185,7 +185,7 @@
 .video {
   width: 100%;
   aspect-ratio: 16/9; 
-  border-radius: 8px;
+  border-radius: 1.5vw;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
@@ -195,7 +195,7 @@
 }
 
 @media (max-width: 768px) {
-  .videoContainer {
-    padding: 0 1rem;
-  }
+.videoContainer {
+  max-width: 80vw;
+}
 }
