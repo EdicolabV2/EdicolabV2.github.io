@@ -16,6 +16,8 @@ import cp2Presentation from '../../static/pdf/checkpoint2.pdf';
 import cp2p from '../../static/img/cp2p.png';
 import cp3Presentation from '../../static/pdf/checkpoint3.pdf';
 import cp3p from '../../static/img/cp3p.png';
+import M4Presentation from '../../static/pdf/M4-Presentation.pdf';
+import M4p from '../../static/img/M4p.png';
 import styles from './milestones.module.css';
 
 export default function Milestones() {
@@ -36,6 +38,9 @@ export default function Milestones() {
           <li><a href="#milestone2">Milestone 2 - 11/3</a></li>
           <li><a href="#checkpoint1">Checkpoint 1 - 25/3</a></li>
           <li><a href="#milestone3">Milestone 3 - 8/4</a></li>
+          <li><a href="#checkpoint2">Checkpoint 2 - 05/5</a></li>
+          <li><a href="#checkpoint3">Checkpoint 3 - 12/5</a></li>
+          <li><a href="#milestone4">Milestone 4 - 26/5</a></li>
         </ul>
       </aside>
 
@@ -136,6 +141,18 @@ export default function Milestones() {
         </div>
       </div>
 
+      <h2 id="milestone4">Milestone 4 - 26/5</h2>
+      <div className={styles.milestonesContainer}>
+        <div className={styles.milestone}>
+          <MilestoneCard
+            title="M4 Presentation"
+            href={M4Presentation}
+            imgSrc={M4p}
+            altText="M4 Presentation"
+          />
+        </div>
+      </div>
+      <br />
     </div>
   );
 }
